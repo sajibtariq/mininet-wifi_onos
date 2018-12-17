@@ -1,0 +1,38 @@
+version: '3'
+services:
+  mininet-wifi:
+    build:
+      context: mininet-wifi/.
+    image: ramonfontes/mininet-wifi
+    tty: true
+    container_name: mininet-wifi
+    privileged: true
+    environment:
+     - DISPLAY
+    volumes:
+     - /sys/:/sys/
+     - /lib/modules:/lib/modules
+    networks:
+      esnet:
+        ipv4_address: 172.28.0.10
+
+  
+
+  onos:
+    image: onosproject/onos
+    container_name: onos
+    ports:
+     - 8181:8181
+    networks:
+      esnet:
+        ipv4_address: 172.28.0.13
+ 
+ 
+
+networks:
+  esnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16

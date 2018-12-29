@@ -3,7 +3,7 @@ services:
   mininet-wifi:
     build:
       context: mininet-wifi/.
-    image: ramonfontes/mininet-wifi
+    image: sajibtariq/mininet-wifi_dashc
     tty: true
     container_name: mininet-wifi
     privileged: true

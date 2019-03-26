@@ -1,6 +1,6 @@
 FROM ramonfontes/mininet-wifi
 
-ADD dashc /root/dashc.
+ADD dashc /root/dashc
 ADD topology.py /root/.
 
 USER root

@@ -14,10 +14,7 @@ services:
      - /lib/modules:/lib/modules
     networks:
       esnet:
-        ipv4_address: 172.28.0.10
-
-  
-
+        ipv4_address: 172.28.0.1
   onos:
     image: onosproject/onos
     container_name: onos
@@ -26,9 +23,6 @@ services:
     networks:
       esnet:
         ipv4_address: 172.28.0.13
- 
- 
-
 networks:
   esnet:
     driver: bridge
